@@ -5,49 +5,70 @@ namespace Aug26Exercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the Number of students");
-            int n=Convert.ToInt32(Console.ReadLine());
-            Students[] student = new Students[n];
-            for(int i = 0; i < n; i++)
+
+            List<Products> product = new List<Products>();
+           
+                Console.WriteLine("1.ADD\t 2.Remove\n");
+                int inp = Convert.ToInt32(Console.ReadLine());
+                switch (inp)
+                {
+                    case 1:
+                        Console.WriteLine("Enter no. of products");
+                        int m=Convert.ToInt32(Console.ReadLine());
+                        for (int i = 0; i < m; i++)
+                        {
+                            Console.WriteLine("Enter Product Id");
+                            int str = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter name");
+                            string pt = Console.ReadLine();
+                            product.Add(new Products { ID = str, Name = pt });
+                        }
+
+                        break;
+                    case 2:
+
+                        if (product.Count == 0)
+                        {
+                            Console.WriteLine("Can't delete in null");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Enter Product Id to delete");
+                            int n = Convert.ToInt32(Console.ReadLine());
+                            Products emp = product.ElementAt(n);
+                            product.Remove(emp);
+                        }
+                        break;
+                    default:
+                        break;
+
+                }
+            Console.WriteLine("Do you want to remove? enter 1 ");
+            int p=Convert.ToInt32(Console.ReadLine());
+            if (p == 1)
             {
-                Console.WriteLine("Enter the {0} id", i + 1);
-                student[i].ID=Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter the name");
-                student[i].Name = Console.ReadLine();
-                Console.WriteLine("Enter age");
-                student[i].Age = Convert.ToInt32(Console.ReadLine());
+                if (product.Count == 0)
+                {
+                    Console.WriteLine("Can't delete in null");
+                }
+                else
+                {
+                    Console.WriteLine("Enter Product Id to delete");
+                    int n = Convert.ToInt32(Console.ReadLine());
+                    Products emp = product.ElementAt(n);
+                    product.Remove(emp);
+                    foreach (var item in product)
+                        item.Display();
+                }
             }
-            for(int i = 0; i < student.Length; i++)
+            else
             {
-                student[i].print();
+                foreach(var item in product)
+                item.Display();
             }
             Console.ReadLine();
-
+               
         }
     }
 }
-    struct Students
-    {
-        public int id;
-        public string name;
-        public int age;
-        public int ID
-        {
-            set { id= value; }
-            get { return id; }
-        }
-        public string Name
-        {
-            set { name= value; }
-            get { return name; }
-        }
-        public int Age
-        {
-            set { age= value; }
-            get { return age; }
-        }
-    public void print()
-    {
-        Console.Write("{0}\t {1}\t {2}\n",id,name,age);
-    }
-}
+    

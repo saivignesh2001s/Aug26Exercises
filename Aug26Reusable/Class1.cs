@@ -32,4 +32,25 @@ namespace Aug26Reusable
         }
 
     }
+    public class Products
+    {
+        public int id;
+        public string name;
+        public float price;
+        public int ID
+        {
+            set { id = value; }
+            get { return id; }
+        }
+        public string Name
+        {
+            set { name = value; }
+            get { return name; }
+        }
+            public void Display()
+        {
+            Console.Write("{0}\t {1}\n",id,name);
+        }
+        
+    }
 }
