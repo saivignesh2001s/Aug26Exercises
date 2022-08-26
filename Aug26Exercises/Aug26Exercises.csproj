@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aug26Reusable\Aug26Reusable.csproj" />
+    <Reference Include="Aug26Reusable">
+      <HintPath>..\Aug26Reusable\bin\Debug\Aug26Reusable.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

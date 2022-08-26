@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aug26Reusable
 {
-    public class Student
+    public class Students
     {
         public int id;
         public string name;
@@ -30,6 +30,8 @@ namespace Aug26Reusable
         {
             Console.Write("{0}\t {1}\t {2}\n", id, name, age);
         }
-
     }
+
+
 }
+

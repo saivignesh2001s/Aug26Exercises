@@ -10,6 +10,7 @@ namespace Aug26Exercises
             Students[] student = new Students[n];
             for(int i = 0; i < n; i++)
             {
+                student[i]=new Students();
                 Console.WriteLine("Enter the {0} id", i + 1);
                 student[i].ID=Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter the name");
@@ -25,29 +26,5 @@ namespace Aug26Exercises
 
         }
     }
-}
-    struct Students
-    {
-        public int id;
-        public string name;
-        public int age;
-        public int ID
-        {
-            set { id= value; }
-            get { return id; }
-        }
-        public string Name
-        {
-            set { name= value; }
-            get { return name; }
-        }
-        public int Age
-        {
-            set { age= value; }
-            get { return age; }
-        }
-    public void print()
-    {
-        Console.Write("{0}\t {1}\t {2}\n",id,name,age);
+    
     }
-}
