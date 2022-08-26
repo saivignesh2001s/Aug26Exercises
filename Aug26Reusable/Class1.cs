@@ -32,4 +32,8 @@ namespace Aug26Reusable
         }
 
     }
+    public class Str
+    {
+        public string name;
+    }
 }
